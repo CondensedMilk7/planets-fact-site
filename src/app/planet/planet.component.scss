@@ -233,31 +233,31 @@ p {
     justify-content: flex-start;
     text-align: left;
     width: 25%;
+    margin: 0 20px 0 20px;
   }
 }
 
 @media (min-width: 1450px) {
   .content {
-    padding-left: 40px;
-    padding-right: 40px;
+    width: 90vw;
     padding-top: 50px;
   }
 
   .img-and-info {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
   }
   .main-info {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    max-width: 50%;
-    margin-left: 4rem;
+    max-width: 40%;
+    margin: 0;
   }
 
   .description {
-    max-width: 86%;
+    max-width: 100%;
     height: 16rem;
   }
 
@@ -265,18 +265,19 @@ p {
     font-size: 5rem;
   }
   .buttons {
-    width: 86%;
+    width: 100%;
+    margin: 0;
   }
   .img-container {
     width: 50%;
     justify-content: center;
-    margin-right: 4rem;
+    // margin-right: 4rem;
   }
   .planet-img {
     max-width: 100%;
   }
 
   .stats {
-    margin-top: 150px;
+    margin: 150px 20px 0 20px;
   }
 }

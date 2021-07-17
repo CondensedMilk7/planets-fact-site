@@ -53,6 +53,7 @@ li {
   padding-top: 1rem;
   padding-bottom: 1rem;
   margin-left: 26px;
+  height: 100%;
   &::after {
     background: none repeat scroll 0 0 transparent;
 
@@ -126,5 +127,5 @@ li {
 }
 
 .hamburger-active {
-  background-color: #6600ff;
+  background-color: #5412b634;
 }
