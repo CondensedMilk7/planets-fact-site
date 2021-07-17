@@ -16,7 +16,7 @@ export class NavComponent implements OnInit {
 
   onPlanetClicked(planet: string) {
     this.currentPlanet.emit(planet);
-
+    this.planetPicked = planet;
     this.modalActive = false;
   }
 

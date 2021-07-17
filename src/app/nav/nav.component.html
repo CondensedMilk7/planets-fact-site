@@ -1,4 +1,4 @@
-<header class="main-header">
+<header class="main-header no-caret">
   <h2 id="planets-logo">THE PLANETS</h2>
   <a
     class="hamburger"
@@ -9,36 +9,73 @@
   <nav class="main-nav">
     <ul>
       <li>
-        <a class="nav-link" (click)="onPlanetClicked('Mercury')">MERCURY</a>
+        <a
+          class="nav-link"
+          (click)="onPlanetClicked('Mercury')"
+          [ngClass]="{ 'planet-active': planetPicked === 'Mercury' }"
+          >MERCURY</a
+        >
       </li>
       <li>
-        <a class="nav-link" (click)="onPlanetClicked('Venus')">VENUS</a>
+        <a
+          class="nav-link"
+          (click)="onPlanetClicked('Venus')"
+          [ngClass]="{ 'planet-active': planetPicked === 'Venus' }"
+          >VENUS</a
+        >
       </li>
       <li>
-        <a class="nav-link" (click)="onPlanetClicked('Earth')">EARTH</a>
+        <a
+          class="nav-link"
+          (click)="onPlanetClicked('Earth')"
+          [ngClass]="{ 'planet-active': planetPicked === 'Earth' }"
+          >EARTH</a
+        >
       </li>
       <li>
-        <a class="nav-link" (click)="onPlanetClicked('Mars')">MARS</a>
+        <a
+          class="nav-link"
+          (click)="onPlanetClicked('Mars')"
+          [ngClass]="{ 'planet-active': planetPicked === 'Mars' }"
+          >MARS</a
+        >
       </li>
       <li>
-        <a class="nav-link" (click)="onPlanetClicked('Jupiter')">JUPITER</a>
+        <a
+          class="nav-link"
+          (click)="onPlanetClicked('Jupiter')"
+          [ngClass]="{ 'planet-active': planetPicked === 'Jupiter' }"
+          >JUPITER</a
+        >
       </li>
       <li>
-        <a class="nav-link" (click)="onPlanetClicked('Saturn')">SATURN</a>
+        <a
+          class="nav-link"
+          (click)="onPlanetClicked('Saturn')"
+          [ngClass]="{ 'planet-active': planetPicked === 'Saturn' }"
+          >SATURN</a
+        >
       </li>
       <li>
-        <a class="nav-link" (click)="onPlanetClicked('Uranus')">URANUS</a>
+        <a
+          class="nav-link"
+          (click)="onPlanetClicked('Uranus')"
+          [ngClass]="{ 'planet-active': planetPicked === 'Uranus' }"
+          >URANUS</a
+        >
       </li>
       <li>
-        <a class="nav-link" (click)="onPlanetClicked('Neptune')">NEPTUNE</a>
+        <a
+          class="nav-link"
+          (click)="onPlanetClicked('Neptune')"
+          [ngClass]="{ 'planet-active': planetPicked === 'Neptune' }"
+          >NEPTUNE</a
+        >
       </li>
     </ul>
   </nav>
 </header>
-<div
-  class="modal"
-  *ngIf="modalActive"
->
+<div class="modal no-caret" *ngIf="modalActive">
   <nav class="modal-nav">
     <ul>
       <li>

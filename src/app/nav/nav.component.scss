@@ -1,3 +1,10 @@
+.no-caret {
+  -webkit-user-select: none; /* Chrome all / Safari all */
+  -moz-user-select: none; /* Firefox all */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none;
+}
+
 .main-header {
   color: white;
   position: fixed;
@@ -57,7 +64,7 @@ li {
   &::after {
     background: none repeat scroll 0 0 transparent;
 
-    top: 0;
+    bottom: 100%;
     content: "";
     display: block;
     height: 4px;
@@ -83,7 +90,9 @@ li {
     display: none;
   }
 }
-
+.planet-active {
+  color: #6f2ed6;
+}
 .modal {
   z-index: 3;
   position: fixed;

@@ -1,3 +1,10 @@
+.no-caret {
+  -webkit-user-select: none; /* Chrome all / Safari all */
+  -moz-user-select: none; /* Firefox all */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none;
+}
+
 .main-container {
   display: flex;
   flex-direction: column;
@@ -46,6 +53,7 @@ p {
       // margin-left: 1rem;
       // margin-right: 1rem;
       position: relative;
+      transition: color 200ms linear;
 
       &::after {
         background: none repeat scroll 0 0 transparent;
@@ -70,6 +78,14 @@ p {
       }
     }
   }
+}
+
+.button-active {
+  background-color: #6f2ed6;
+}
+
+.header-btn-active {
+  color: #6f2ed6;
 }
 
 .img-container {
@@ -152,7 +168,6 @@ p {
     transition: background 250ms linear;
 
     &:hover,
-    &:active,
     &:focus {
       background-color: #6f2ed6;
     }
