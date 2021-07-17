@@ -1,18 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NavComponent } from './nav/nav.component';
+import { PlanetComponent } from './planet/planet.component';
+import { PlanetsService } from './planets.service';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [AppComponent, NavComponent, PlanetComponent],
+  imports: [BrowserModule],
+  providers: [PlanetsService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

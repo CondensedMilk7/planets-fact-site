@@ -1,0 +1,70 @@
+<header class="main-header">
+  <h2 id="planets-logo">THE PLANETS</h2>
+  <a
+    class="hamburger"
+    (click)="onModalActivated()"
+    [ngClass]="{ 'hamburger-active': modalActive }"
+    ><img src="../../assets/images/icon-hamburger.svg" alt="navigation button"
+  /></a>
+  <nav class="main-nav">
+    <ul>
+      <li>
+        <a class="nav-link" (click)="onPlanetClicked('Mercury')">MERCURY</a>
+      </li>
+      <li>
+        <a class="nav-link" (click)="onPlanetClicked('Venus')">VENUS</a>
+      </li>
+      <li>
+        <a class="nav-link" (click)="onPlanetClicked('Earth')">EARTH</a>
+      </li>
+      <li>
+        <a class="nav-link" (click)="onPlanetClicked('Mars')">MARS</a>
+      </li>
+      <li>
+        <a class="nav-link" (click)="onPlanetClicked('Jupiter')">JUPITER</a>
+      </li>
+      <li>
+        <a class="nav-link" (click)="onPlanetClicked('Saturn')">SATURN</a>
+      </li>
+      <li>
+        <a class="nav-link" (click)="onPlanetClicked('Uranus')">URANUS</a>
+      </li>
+      <li>
+        <a class="nav-link" (click)="onPlanetClicked('Neptune')">NEPTUNE</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+<div
+  class="modal"
+  *ngIf="modalActive"
+>
+  <nav class="modal-nav">
+    <ul>
+      <li>
+        <a class="nav-link" (click)="onPlanetClicked('Mercury')">MERCURY</a>
+      </li>
+      <li>
+        <a class="nav-link" (click)="onPlanetClicked('Venus')">VENUS</a>
+      </li>
+      <li>
+        <a class="nav-link" (click)="onPlanetClicked('Earth')">EARTH</a>
+      </li>
+      <li>
+        <a class="nav-link" (click)="onPlanetClicked('Mars')">MARS</a>
+      </li>
+      <li>
+        <a class="nav-link" (click)="onPlanetClicked('Jupiter')">JUPITER</a>
+      </li>
+      <li>
+        <a class="nav-link" (click)="onPlanetClicked('Saturn')">SATURN</a>
+      </li>
+      <li>
+        <a class="nav-link" (click)="onPlanetClicked('Uranus')">URANUS</a>
+      </li>
+      <li>
+        <a class="nav-link" (click)="onPlanetClicked('Neptune')">NEPTUNE</a>
+      </li>
+    </ul>
+  </nav>
+</div>

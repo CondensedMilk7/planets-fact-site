@@ -1,0 +1,69 @@
+<section class="main-container">
+  <header class="header-buttons">
+    <ul class="header-buttons-list">
+      <li class="buttons-list-item">
+        <a class="btn" (click)="changeInfoMode('overview')">OVERVIEW</a>
+      </li>
+      <li class="buttons-list-item">
+        <a class="btn" (click)="changeInfoMode('structure')">STRUCTURE</a>
+      </li>
+      <li class="buttons-list-item">
+        <a class="btn" (click)="changeInfoMode('geology')">SURFACE</a>
+      </li>
+    </ul>
+  </header>
+  <div class="content">
+    <div class="img-and-info">
+    <div class="img-container">
+      <img class="planet-img" [src]="planet.image" [alt]="planet.name" />
+      <img
+        *ngIf="infoMode === 'geology'"
+        class="planet-overlay"
+        [src]="planet.overlayImage"
+        [alt]="'surface of ' + planet.name"
+      />
+    </div>
+    <div class="main-info">
+      <div class="description">
+        <h1 class="planet-title">{{ planet.name }}</h1>
+        <p class="planet-content">{{ planet.content }}</p>
+        <p class="source">
+          Source: <a [href]="planet.source"> Wikipedia</a>
+          <img src="../../assets/images/icon-source.svg" alt="" />
+        </p>
+      </div>
+      <div class="buttons">
+        <a class="btn" (click)="changeInfoMode('overview')"
+          ><span class="btn-num">01</span>OVERVIEW</a
+        >
+
+        <a class="btn" (click)="changeInfoMode('structure')"
+          ><span class="btn-num">02</span>INTERNAL STRUCTURE</a
+        >
+
+        <a class="btn" (click)="changeInfoMode('geology')"
+          ><span class="btn-num">03</span>SURFACE GEOLOGY</a
+        >
+      </div>
+    </div>
+  </div>
+    <div class="stats">
+      <div class="stat">
+        <p>ROTATION TIME</p>
+        <h3>{{ planet.rotation }}</h3>
+      </div>
+      <div class="stat">
+        <p>REVOLUTION TIME</p>
+        <h3>{{ planet.revolution }}</h3>
+      </div>
+      <div class="stat">
+        <p>RADIUS</p>
+        <h3>{{ planet.radius }}</h3>
+      </div>
+      <div class="stat">
+        <p>AVERAGE TEMP</p>
+        <h3>{{ planet.temperature }}</h3>
+      </div>
+    </div>
+  </div>
+</section>
