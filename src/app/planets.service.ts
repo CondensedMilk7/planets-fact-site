@@ -39,24 +39,6 @@ export class PlanetsService {
     } else {
       filteredPlanet.image = planetData.images[filter];
     }
-
-    // Longer way... will be removed
-    // if (filter === 'overview') {
-    //   filteredPlanet.content = planetData.overview.content;
-    //   filteredPlanet.source = planetData.overview.source;
-    //   filteredPlanet.image = planetData.images.overview;
-    // }
-    // if (filter === 'structure') {
-    //   filteredPlanet.content = planetData.structure.content;
-    //   filteredPlanet.source = planetData.structure.source;
-    //   filteredPlanet.image = planetData.images.structure;
-    // }
-    // if (filter === 'geology') {
-    //   filteredPlanet.content = planetData.geology.content;
-    //   filteredPlanet.source = planetData.geology.source;
-    //   filteredPlanet.image = planetData.images.geology;
-    // }
-
     return filteredPlanet;
   }
 
