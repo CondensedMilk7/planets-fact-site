@@ -1,8 +1,9 @@
 <app-nav (currentPlanet)="onPlanetPicked($event)"></app-nav>
 <main>
-  <app-planet
+  <!-- <app-planet
     [planet]="planetData"
     [infoMode]="infoMode"
     (filterMode)="onChangeInfoMode($event)"
-  ></app-planet>
+  ></app-planet> -->
+  <router-outlet></router-outlet>
 </main>

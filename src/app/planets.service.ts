@@ -40,32 +40,18 @@ export class PlanetsService {
       filteredPlanet.image = planetData.images[filter];
     }
 
-    // Longer way... will be removed
-    // if (filter === 'overview') {
-    //   filteredPlanet.content = planetData.overview.content;
-    //   filteredPlanet.source = planetData.overview.source;
-    //   filteredPlanet.image = planetData.images.overview;
-    // }
-    // if (filter === 'structure') {
-    //   filteredPlanet.content = planetData.structure.content;
-    //   filteredPlanet.source = planetData.structure.source;
-    //   filteredPlanet.image = planetData.images.structure;
-    // }
-    // if (filter === 'geology') {
-    //   filteredPlanet.content = planetData.geology.content;
-    //   filteredPlanet.source = planetData.geology.source;
-    //   filteredPlanet.image = planetData.images.geology;
-    // }
-
     return filteredPlanet;
   }
 
   getPlanetData(planetName: string) {
-    // looks for an object by its name in the array. Name with a capital, case sensitive.
-    // e.g Venus, Mars, not venus, mars etc. might need to improve this later.
     const retrievedPlanet = this.fetchedPlanetsData.find((object) => {
-      return object.name === planetName;
+      return object.name === this.capitalize(planetName);
     });
     return retrievedPlanet;
+  }
+
+  // Planet names need to be capitalized because the they are capitalized in the json file and javascript is case sensitive
+  capitalize(string: String) {
+    return string && string[0].toUpperCase() + string.slice(1);
   }
 }

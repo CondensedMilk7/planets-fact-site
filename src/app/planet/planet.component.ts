@@ -1,5 +1,7 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 import { FilteredPlanetData } from '../filtered-planet-data.model';
+import { PlanetsService } from '../planets.service';
 
 @Component({
   selector: 'app-planet',
@@ -7,15 +9,25 @@ import { FilteredPlanetData } from '../filtered-planet-data.model';
   styleUrls: ['./planet.component.scss'],
 })
 export class PlanetComponent implements OnInit {
-  @Input() planet: FilteredPlanetData;
-  @Output() filterMode = new EventEmitter();
-  @Input() infoMode: 'overview' | 'structure' | 'geology' = 'overview';
+  planet: FilteredPlanetData;
+  currentPlanet = '';
+  infoMode: 'overview' | 'structure' | 'geology' = 'overview';
 
-  constructor() {}
+  constructor(
+    private route: ActivatedRoute,
+    private planetsService: PlanetsService
+  ) {}
 
-  ngOnInit() {}
-
-  changeInfoMode(filter: 'overview' | 'structure' | 'geology') {
-    this.filterMode.emit(filter);
+  ngOnInit() {
+    this.route.params.subscribe((params: Params) => {
+      this.currentPlanet = params['planet'];
+      this.planet = this.planetsService.getFilteredPlanetData(
+        this.currentPlanet,
+        this.infoMode
+      );
+    });
   }
+
+  changeInfoMode(filter: 'overview' | 'structure' | 'geology') {}
+  
 }

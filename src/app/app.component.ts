@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { FilteredPlanetData } from './filtered-planet-data.model';
 import { PlanetsService } from './planets.service';
 
@@ -10,17 +11,21 @@ import { PlanetsService } from './planets.service';
 export class AppComponent implements OnInit {
   title = 'planets-fact-site';
   planetData: FilteredPlanetData;
-  currentPlanet = 'Earth';
+  currentPlanet = '';
   infoMode: 'overview' | 'structure' | 'geology' = 'overview';
 
-  constructor(private planetsService: PlanetsService) {}
+  constructor(
+    private planetsService: PlanetsService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
-    this.planetData = this.planetsService.getFilteredPlanetData(
-      this.currentPlanet,
-      this.infoMode
-    );
-    this.currentPlanet = 'Earth';
+    // This doesn't work
+    this.route.firstChild.params.subscribe((params) => {
+      this.currentPlanet = params['planet'];
+      console.log(this.currentPlanet);
+    });
   }
 
   onPlanetPicked(planet: string) {
@@ -30,6 +35,7 @@ export class AppComponent implements OnInit {
       this.infoMode
     );
     this.currentPlanet = planet;
+    this.router.navigate([`/${planet}`]);
   }
 
   onChangeInfoMode(filter: 'overview' | 'structure' | 'geology') {

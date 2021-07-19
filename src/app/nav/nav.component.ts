@@ -1,4 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -7,16 +8,16 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class NavComponent implements OnInit {
   @Output() currentPlanet = new EventEmitter<string>();
-  planetPicked = 'Earth';
+  @Input() currentRoute: string;
   modalActive = false;
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit() {
+  }
 
   onPlanetClicked(planet: string) {
     this.currentPlanet.emit(planet);
-    this.planetPicked = planet;
     this.modalActive = false;
   }
 
