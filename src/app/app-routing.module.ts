@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { PlanetComponent } from './planet/planet.component';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
   { path: ':planet', component: PlanetComponent },

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
+import { ChildService } from '../child.service';
 import { FilteredPlanetData } from '../filtered-planet-data.model';
 import { PlanetsService } from '../planets.service';
 
@@ -14,8 +15,9 @@ export class PlanetComponent implements OnInit {
   infoMode: 'overview' | 'structure' | 'geology' = 'overview';
 
   constructor(
-    private route: ActivatedRoute,
-    private planetsService: PlanetsService
+    public route: ActivatedRoute,
+    private planetsService: PlanetsService,
+    private childService: ChildService
   ) {}
 
   ngOnInit() {
@@ -26,6 +28,7 @@ export class PlanetComponent implements OnInit {
         this.infoMode
       );
     });
+    this.childService.currentChildRoute.next(this.currentPlanet);
   }
 
   changeInfoMode(filter: 'overview' | 'structure' | 'geology') {
