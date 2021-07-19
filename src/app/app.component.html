@@ -1,4 +1,7 @@
-<app-nav (currentPlanet)="onPlanetPicked($event)"></app-nav>
+<app-nav
+  (currentPlanet)="onPlanetPicked($event)"
+  [currentRoute]="currentPlanet"
+></app-nav>
 <main>
   <!-- <app-planet
     [planet]="planetData"

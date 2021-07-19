@@ -28,6 +28,11 @@ export class PlanetComponent implements OnInit {
     });
   }
 
-  changeInfoMode(filter: 'overview' | 'structure' | 'geology') {}
-  
+  changeInfoMode(filter: 'overview' | 'structure' | 'geology') {
+    this.infoMode = filter;
+    this.planet = this.planetsService.getFilteredPlanetData(
+      this.currentPlanet,
+      filter
+    );
+  }
 }
