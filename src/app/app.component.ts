@@ -20,22 +20,24 @@ export class AppComponent implements OnInit {
   title = 'planets-fact-site';
   currentPlanet = '';
   infoMode: 'overview' | 'structure' | 'geology' = 'overview';
+  modalActive = false;
 
   constructor(
-    private planetsService: PlanetsService,
     private router: Router,
     private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
-    // this.route.children[0].params.subscribe((params) => {
-    //   console.log(params);
-    // });
-    console.log(this.route.children);
+
   }
 
-  onPlanetPicked(planet: string) {
+  onPlanetClicked(planet: string) {
     this.currentPlanet = planet;
     this.router.navigate([`/${planet}`]);
+    this.modalActive = false;
+  }
+
+  onModalActivated() {
+    this.modalActive = !this.modalActive;
   }
 }

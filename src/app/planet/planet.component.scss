@@ -1,7 +1,7 @@
 .no-caret {
-  -webkit-user-select: none; /* Chrome all / Safari all */
-  -moz-user-select: none; /* Firefox all */
-  -ms-user-select: none; /* IE 10+ */
+  -webkit-user-select: none; 
+  -moz-user-select: none; 
+  -ms-user-select: none; 
   user-select: none;
 }
 
@@ -38,7 +38,7 @@ p {
   position: sticky;
   top: 4.5rem;
   left: 0;
-  @media (min-width: 900px) {
+  @media (min-width: 932px) {
     display: none;
   }
   .header-buttons-list {
@@ -111,7 +111,7 @@ p {
     left: 38%;
     width: 12rem;
   }
-  @media (min-width: 900px) {
+  @media (min-width: 932px) {
     left: 40%;
     width: 13rem;
   }
@@ -204,7 +204,7 @@ p {
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 932px) {
   .img-container {
     height: 45vh;
   }
