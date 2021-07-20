@@ -43,11 +43,14 @@ export class PlanetsService {
   }
 
   getPlanetData(planetName: string) {
-    // looks for an object by its name in the array. Name with a capital, case sensitive.
-    // e.g Venus, Mars, not venus, mars etc. might need to improve this later.
     const retrievedPlanet = this.fetchedPlanetsData.find((object) => {
-      return object.name === planetName;
+      return object.name === this.capitalize(planetName);
     });
     return retrievedPlanet;
+  }
+
+  // Planet names need to be capitalized because the they are capitalized in the json file and javascript is case sensitive
+  capitalize(string: String) {
+    return string && string[0].toUpperCase() + string.slice(1);
   }
 }

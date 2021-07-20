@@ -1,8 +1,155 @@
-<app-nav (currentPlanet)="onPlanetPicked($event)"></app-nav>
+<header class="main-header no-caret">
+  <h2 id="planets-logo">THE PLANETS</h2>
+  <a
+    class="hamburger"
+    (click)="onModalActivated()"
+    [ngClass]="{ 'hamburger-active': modalActive }"
+    ><img src="../../assets/images/icon-hamburger.svg" alt="navigation button"
+  /></a>
+  <nav class="main-nav">
+    <ul>
+      <li>
+        <a
+          class="nav-link"
+          routerLink="/mercury"
+          routerLinkActive="planet-active"
+          >MERCURY</a
+        >
+      </li>
+      <li>
+        <a class="nav-link" routerLink="/venus" routerLinkActive="planet-active"
+          >VENUS</a
+        >
+      </li>
+      <li>
+        <a class="nav-link" routerLink="/earth" routerLinkActive="planet-active"
+          >EARTH</a
+        >
+      </li>
+      <li>
+        <a class="nav-link" routerLink="/mars" routerLinkActive="planet-active"
+          >MARS</a
+        >
+      </li>
+      <li>
+        <a
+          class="nav-link"
+          routerLink="/jupiter"
+          routerLinkActive="planet-active"
+          >JUPITER</a
+        >
+      </li>
+      <li>
+        <a
+          class="nav-link"
+          routerLink="/saturn"
+          routerLinkActive="planet-active"
+          >SATURN</a
+        >
+      </li>
+      <li>
+        <a
+          class="nav-link"
+          routerLink="/uranus"
+          routerLinkActive="planet-active"
+          >URANUS</a
+        >
+      </li>
+      <li>
+        <a
+          class="nav-link"
+          routerLink="/neptune"
+          routerLinkActive="planet-active"
+          >NEPTUNE</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>
+<div class="modal no-caret" *ngIf="modalActive">
+  <nav class="modal-nav">
+    <ul>
+      <li>
+        <a
+          class="nav-link"
+          routerLink="/mercury"
+          routerLinkActive="planet-active"
+          (click)="modalActive = false"
+          >MERCURY</a
+        >
+      </li>
+      <li>
+        <a
+          class="nav-link"
+          routerLink="/venus"
+          routerLinkActive="planet-active"
+          (click)="modalActive = false"
+          >VENUS</a
+        >
+      </li>
+      <li>
+        <a
+          class="nav-link"
+          routerLink="/earth"
+          routerLinkActive="planet-active"
+          (click)="modalActive = false"
+          >EARTH</a
+        >
+      </li>
+      <li>
+        <a
+          class="nav-link"
+          routerLink="/mars"
+          routerLinkActive="planet-active"
+          (click)="modalActive = false"
+          >MARS</a
+        >
+      </li>
+      <li>
+        <a
+          class="nav-link"
+          routerLink="/jupiter"
+          routerLinkActive="planet-active"
+          (click)="modalActive = false"
+          >JUPITER</a
+        >
+      </li>
+      <li>
+        <a
+          class="nav-link"
+          routerLink="/saturn"
+          routerLinkActive="planet-active"
+          (click)="modalActive = false"
+          >SATURN</a
+        >
+      </li>
+      <li>
+        <a
+          class="nav-link"
+          routerLink="/uranus"
+          routerLinkActive="planet-active"
+          (click)="modalActive = false"
+          >URANUS</a
+        >
+      </li>
+      <li>
+        <a
+          class="nav-link"
+          routerLink="/neptune"
+          routerLinkActive="planet-active"
+          (click)="modalActive = false"
+          >NEPTUNE</a
+        >
+      </li>
+    </ul>
+  </nav>
+</div>
+
 <main>
-  <app-planet
+  <!-- <app-planet
     [planet]="planetData"
     [infoMode]="infoMode"
     (filterMode)="onChangeInfoMode($event)"
-  ></app-planet>
+  ></app-planet> -->
+  <router-outlet></router-outlet>
 </main>

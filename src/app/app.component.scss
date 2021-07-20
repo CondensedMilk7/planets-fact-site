@@ -1,3 +1,145 @@
+.no-caret {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.main-header {
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  padding-left: 38px;
+  padding-right: 38px;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #37374e;
+  z-index: 3;
+  background: rgba(8, 9, 26, 0.9);
+
+  .hamburger {
+    border-radius: 3px;
+    padding: 8px;
+    transition: background 250ms linear;
+    @media (min-width: 932px) {
+      display: none;
+    }
+  }
+}
+a {
+  cursor: pointer;
+}
+
+#planets-logo {
+  font-family: "Antonio", sans-serif;
+}
+
+.main-nav {
+  font-size: 1rem;
+  font-family: "Spartan", sans-serif;
+  font-weight: bold;
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+li {
+  list-style: none;
+  // margin: 0 1rem 0 1rem;
+}
+.nav-link {
+  text-decoration: none;
+  color: white;
+  transition: color 250ms linear;
+  position: relative;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-left: 26px;
+  height: 100%;
+  &::after {
+    background: none repeat scroll 0 0 transparent;
+
+    bottom: 100%;
+    content: "";
+    display: block;
+    height: 4px;
+    left: 50%;
+    position: absolute;
+    background: #6f2ed6;
+    width: 0;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: #6f2ed6;
+    &::after {
+      left: 0;
+      width: 100%;
+    }
+  }
+}
+@media (max-width: 932px) {
+  .main-nav {
+    display: none;
+  }
+}
+.planet-active {
+  color: #6f2ed6;
+}
+.modal {
+  z-index: 3;
+  position: fixed;
+  top: 4rem;
+  left: 0;
+  color: white;
+  width: 100%;
+  text-align: center;
+  height: 100vh;
+  font-family: "Spartan", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background: rgba(8, 9, 26, 0.9);
+  animation-name: modal-background;
+  animation-duration: 0.5s;
+}
+
+@keyframes modal-background {
+  from {
+    background: rgba(8, 9, 26, 0);
+  }
+  to {
+    background: rgba(8, 9, 26, 0.9);
+  }
+}
+
+.modal-nav {
+  margin-top: 4rem;
+  li {
+    margin: 2rem;
+    font-size: 2rem;
+  }
+  .nav-link {
+    &::after {
+      top: auto;
+      bottom: 0;
+    }
+  }
+}
+
+.hamburger-active {
+  background-color: #5412b634;
+}
+
 main {
   margin-top: 4rem;
 }
