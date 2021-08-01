@@ -1,18 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=Spartan:wght@400;700&display=swap");
 
+:root {
+  --mercury: #419db9;
+  --venus: #eda44a;
+  --earth: #6f2ed6;
+  --mars: #d14e33;
+  --jupiter: #d93b36;
+  --saturn: #cb5020;
+  --uranus: #1ec2a4;
+  --neptune: #2d68f0;
+}
+
 $white: #fff;
 $black: #070722;
 $dark-grey: #37374e;
 $light-grey: #838391;
-$mercury: #419db9;
-$venus: #eda44a;
-$earth: #6f2ed6;
-$mars: #d14e33;
-$jupiter: #d93b36;
-$saturn: #cb5020;
-$uranus: #1ec2a4;
-$neptune: #2d68f0;
+
 $button-hover: #313148;
 $ff-spartan: "Spartan", sans-serif;
 $ff-antonio: "Antonio", sans-serif;
@@ -22,8 +26,6 @@ $ff-base-size: 14px;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-
-  
 }
 
 html {
@@ -32,4 +34,184 @@ html {
 
 body {
   background: url("./assets/images/background-stars.svg") rgb(8, 9, 26);
+}
+.nav-link {
+  text-decoration: none;
+  color: white;
+  transition: color 250ms linear;
+  position: relative;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-left: 26px;
+  height: 100%;
+  &::after {
+    background: none repeat scroll 0 0 transparent;
+
+    bottom: 100%;
+    content: "";
+    display: block;
+    height: 4px;
+    left: 50%;
+    position: absolute;
+    width: 0;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    &::after {
+      left: 0;
+      width: 100%;
+    }
+  }
+}
+
+// navigation active states
+
+#mercury {
+  &:after {
+    background: var(--mercury);
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--mercury);
+  }
+}
+
+.mercury-active {
+  color: var(--mercury);
+}
+
+#venus {
+  &:after {
+    background: var(--venus);
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--venus);
+  }
+}
+
+.venus-active {
+  color: var(--venus);
+}
+
+#earth {
+  &:after {
+    background: var(--earth);
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--earth);
+  }
+}
+
+.earth-active {
+  color: var(--earth);
+}
+
+#mars {
+  &:after {
+    background: var(--mars);
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--mars);
+  }
+}
+
+.mars-active {
+  color: var(--mars);
+}
+
+#jupiter {
+  &:after {
+    background: var(--jupiter);
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--jupiter);
+  }
+}
+
+.jupiter-active {
+  color: var(--jupiter);
+}
+
+#saturn {
+  &:after {
+    background: var(--saturn);
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--saturn);
+  }
+}
+
+.saturn-active {
+  color: var(--saturn);
+}
+
+#uranus {
+  &:after {
+    background: var(--uranus);
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--uranus);
+  }
+}
+
+.uranus-active {
+  color: var(--uranus);
+}
+
+#neptune {
+  &:after {
+    background: var(--neptune);
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--neptune);
+  }
+}
+
+.neptune-active {
+  color: var(--neptune);
+}
+
+// infomode active states
+
+.btn-active-mercury {
+  background-color: var(--mercury);
+}
+.btn-active-venus {
+  background-color: var(--venus);
+}
+.btn-active-earth {
+  background-color: var(--earth);
+}
+.btn-active-mars {
+  background-color: var(--mars);
+}
+.btn-active-jupiter {
+  background-color: var(--jupiter);
+}
+.btn-active-saturn {
+  background-color: var(--saturn);
+}
+.btn-active-uranus {
+  background-color: var(--uranus);
+}
+.btn-active-neptune {
+  background-color: var(--neptune);
 }

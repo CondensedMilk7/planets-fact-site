@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { FilteredPlanetData } from '../filtered-planet-data.model';
 import { PlanetsService } from '../planets.service';
@@ -12,10 +12,11 @@ export class PlanetComponent implements OnInit {
   planet: FilteredPlanetData;
   currentPlanet = '';
   infoMode: 'overview' | 'structure' | 'geology' = 'overview';
+  btnStyle = '';
 
   constructor(
     public route: ActivatedRoute,
-    private planetsService: PlanetsService,
+    private planetsService: PlanetsService
   ) {}
 
   ngOnInit() {
@@ -25,6 +26,8 @@ export class PlanetComponent implements OnInit {
         this.currentPlanet,
         this.infoMode
       );
+      this.btnStyle = `background-color: --${this.currentPlanet};`; //not working
+      console.log(this.btnStyle);
     });
   }
 

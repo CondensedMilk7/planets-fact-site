@@ -1,7 +1,7 @@
 .no-caret {
-  -webkit-user-select: none; 
-  -moz-user-select: none; 
-  -ms-user-select: none; 
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
 }
 
@@ -79,10 +79,6 @@ p {
       }
     }
   }
-}
-
-.button-active {
-  background-color: #6f2ed6;
 }
 
 .header-btn-active {
@@ -168,9 +164,8 @@ p {
     padding: 20px;
     transition: background 250ms linear;
 
-    &:hover,
-    &:focus {
-      background-color: #6f2ed6;
+    &:hover {
+      background-color: #00000034;
     }
   }
   .btn-num {

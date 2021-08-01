@@ -53,47 +53,13 @@ li {
   list-style: none;
   // margin: 0 1rem 0 1rem;
 }
-.nav-link {
-  text-decoration: none;
-  color: white;
-  transition: color 250ms linear;
-  position: relative;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  margin-left: 26px;
-  height: 100%;
-  &::after {
-    background: none repeat scroll 0 0 transparent;
 
-    bottom: 100%;
-    content: "";
-    display: block;
-    height: 4px;
-    left: 50%;
-    position: absolute;
-    background: #6f2ed6;
-    width: 0;
-    transition: width 0.3s ease 0s, left 0.3s ease 0s;
-  }
-
-  &:hover,
-  &:active,
-  &:focus {
-    color: #6f2ed6;
-    &::after {
-      left: 0;
-      width: 100%;
-    }
-  }
-}
 @media (max-width: 932px) {
   .main-nav {
     display: none;
   }
 }
-.planet-active {
-  color: #6f2ed6;
-}
+
 .modal {
   z-index: 3;
   position: fixed;
