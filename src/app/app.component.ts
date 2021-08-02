@@ -1,15 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {
   ActivatedRoute,
-  NavigationEnd,
-  ParamMap,
-  Params,
   Router,
-  RouterLink,
 } from '@angular/router';
-import { FilteredPlanetData } from './filtered-planet-data.model';
-import { PlanetsService } from './planets.service';
-import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
