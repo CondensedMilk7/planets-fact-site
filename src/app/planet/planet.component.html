@@ -51,21 +51,20 @@
           <a
             class="btn"
             (click)="changeInfoMode('overview')"
-            [ngClass]="{ active: infoMode === 'overview' }"
+            [style.background-color]="bgOverview"
             ><span class="btn-num">01</span>OVERVIEW</a
           >
-
           <a
             class="btn"
             (click)="changeInfoMode('structure')"
-            [ngClass]="{ active: infoMode === 'structure' }"
+            [style.background-color]="bgStructure"
             ><span class="btn-num">02</span>INTERNAL STRUCTURE</a
           >
 
           <a
             class="btn"
             (click)="changeInfoMode('geology')"
-            [ngClass]="{ active: infoMode === 'geology' }"
+            [style.background-color]="bgGeology"
             ><span class="btn-num">03</span>SURFACE GEOLOGY</a
           >
         </div>

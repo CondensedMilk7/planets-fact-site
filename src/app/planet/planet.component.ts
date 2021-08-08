@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { FilteredPlanetData } from '../filtered-planet-data.model';
 import { PlanetsService } from '../planets.service';
@@ -12,7 +12,11 @@ export class PlanetComponent implements OnInit {
   planet: FilteredPlanetData;
   currentPlanet = '';
   infoMode: 'overview' | 'structure' | 'geology' = 'overview';
-  btnStyle = '';
+  btnActiveColor = '';
+
+  bgOverview: string;
+  bgStructure: string;
+  bgGeology: string;
 
   constructor(
     public route: ActivatedRoute,
@@ -26,8 +30,10 @@ export class PlanetComponent implements OnInit {
         this.currentPlanet,
         this.infoMode
       );
-      this.btnStyle = `background-color: --${this.currentPlanet};`; //not working
-      console.log(this.btnStyle);
+      // corresponds to the color variable names in css file
+      // respectively for all planets
+      this.btnActiveColor = `var(--${this.currentPlanet})`;
+      this.updateInfomodeBtns();
     });
   }
 
@@ -37,5 +43,23 @@ export class PlanetComponent implements OnInit {
       this.currentPlanet,
       filter
     );
+    this.updateInfomodeBtns();
+  }
+
+  // Updates colors of the active infomode buttons
+  updateInfomodeBtns() {
+    if (this.infoMode === 'overview') {
+      this.bgOverview = this.btnActiveColor;
+      this.bgStructure = '';
+      this.bgGeology = '';
+    } else if (this.infoMode === 'structure') {
+      this.bgOverview = '';
+      this.bgStructure = this.btnActiveColor;
+      this.bgGeology = '';
+    } else if (this.infoMode === 'geology') {
+      this.bgOverview = '';
+      this.bgStructure = '';
+      this.bgGeology = this.btnActiveColor;
+    }
   }
 }
